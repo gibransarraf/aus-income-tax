@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax Rates Chart</title>
+  <!-- Bootstrap library -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Include jQuery.js library -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <!-- Include Chart.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body class="bg-secondary">
+  <section class="p-2">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 px-2">
+          <div class="card bg-dark mt-2 mb-3">
+            <div class="card-body">
+              <h1 class="text-center fw-bold text-secondary m-0">AUSTRALIAN INCOME TAX CALCULATOR</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-4 px-2">
+          <div class="row">
+            <div class="col-md-6 col-xl-12 mb-3">
+              <div class="card h-100 text-secondary bg-dark">
+                <div class="card-body">
+                  <div class="form-group">
+                    <p class="text-center fw-bold">Taxable Income</p>
+                    <input id="taxable_income_n" class="form-range mb-3" type="range" min="0" max="200000" value="60000"
+                      step="1" tabindex="-1">
+                    <div class="d-flex gap-3 justify-content-center align-items-center">
+                      <b>$</b>
+                      <input id="taxable_income" class="range-value form-control text-center" type="number" min="0"
+                        max="200000" placeholder="0"></input>
+                    </div>
+                  </div>
+                </div>
+                <hr class="m-0">
+                <div class="card-body">
+                  <div class="row g-3 align-items-center">
+                    <div class="col-auto">
+                      You've already payed
+                    </div>
+                    <b class="col-auto">$</b>
+                    <div class="col ps-0">
+                      <input id="alreadyPayed" class="form-control form-control-sm text-center bg-secondary border-dark"
+                        type="number" min="0" placeholder="0">
+                    </div>
+                  </div>
+                </div>
+                <hr class="m-0">
+                <div class="card-body text-center">
+                  <label class="form-label">
+                    <span id="message"></span>
+                    <b id="taxReturn"></b>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-xl-12 mb-3">
+              <div class="card h-100 text-secondary bg-dark">
+                <div class="card-body">
+                  <div class="form-group">
+                    <div class="row g-3 align-items-center">
+                      <div class="col-auto">
+                        <label class="form-label m-0">
+                          You are
+                        </label>
+                      </div>
+                      <div class="col">
+                        <select id="TaxCondition" aria-label="Tax condition"
+                          class="form-select bg-secondary border-dark">
+                          <option value="resident" selected>
+                            Australian resident
+                          </option>
+                          <option value="whm">
+                            Working Holiday Maker
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr class="m-0">
+                <div class="card-body">
+                  <table id="TaxConditionTable" class="table table-dark table-striped text-secondary">
+                    <thead>
+                      <tr>
+                        <th>Taxable income</th>
+                        <th>Tax on this income</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-8">
+          <div class="row">
+            <div class="col-12 px-2">
+              <div class="card bg-dark">
+                <div class="card-body">
+                  <div id="chartBox">
+                    <canvas id="taxChart" width="400" height="500"></canvas>
+                  </div>
+                </div>
+                <hr class="m-0">
+                <div id="totalTax"
+                  class="card-body d-flex flex-wrap gap-3 align-items-center justify-content-center text-center">
+                  <p class="h3 m-0 text-white-50">Total Taxes</p>
+                  <p class="h3 m-0 text-white-50"></p>
+                  <p class="h3 m-0 text-secondary"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="assets/scripts.js"></script>
+</body>
+
+</html>

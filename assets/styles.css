@@ -1,0 +1,68 @@
+:root {
+  --border-color: lightgrey;
+}
+
+body {
+  font-size: 16px;
+}
+
+canvas {
+  margin: 0;
+  background-color: #212529;
+}
+
+pre {
+  tab-size: 2;
+  font-size: 12px;
+  line-height: 1.1;
+  margin-bottom: 0;
+}
+
+hr {
+  border-color: var(--border-color);
+}
+
+.card {
+  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.3);
+}
+
+.table {
+  line-height: 1.1;
+  margin-bottom: 0;
+}
+
+.table th {
+  font-weight: bold;
+}
+
+.table-striped > thead > tr > *,
+.table-striped > tbody > tr > * {
+  color: gray;
+}
+
+/* ---------------------------------
+    FORM
+-----------------------------------*/
+
+.form-range::-webkit-slider-thumb {
+  background-color: lightgrey;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  background-color: gray;
+}
+
+.form-control {
+  font-weight: bold;
+  border-color: gray;
+  background-color: lightgray;
+}
+
+input[type="number"].form-control::-webkit-outer-spin-button,
+input[type="number"].form-control::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"].form-control {
+  -moz-appearance: textfield;
+}
